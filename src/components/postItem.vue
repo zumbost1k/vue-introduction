@@ -4,15 +4,13 @@
             <div><strong>name of language:</strong> {{ post.title }}</div>
             <div><strong>description</strong> {{ post.body }}</div>
         </div>
-        <myBTN :text="'delete'" />
+        <my-button @click="$emit('remove', post)" style="align-self:flex-end ;">
+            delete
+        </my-button>
     </div>
 </template>
 <script>
-import myBTN from "./UI/myBTN.vue";
 export default {
-    components: {
-        myBTN
-    },
     props: {
         post: {
             type: Object,

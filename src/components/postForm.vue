@@ -1,14 +1,16 @@
 <template lang="">
      <form class="post_form" @submit.prevent>
             <h3>create post</h3>
-            <input v-model="post.title" class="post_input" type="text"
-                placeholder="name">
-            <input v-model="post.body" class="post_input" type="text"
-                placeholder="description">
-            <button  type="sumbit" @click="createPost">add comment</button>
+            <my-input v-model="post.title" type="text"
+                placeholder="name"/>
+            <my-input  v-model="post.body"  placeholder="description"/>
+                <my-button @click="createPost" type="sumbit" style="margin-top: 15px;">
+                    add comment
+                </my-button>
         </form>
 </template>
 <script>
+
 export default {
     data() {
         return {
@@ -32,13 +34,6 @@ export default {
 }
 </script>
 <style >
-.post_input {
-    width: 100%;
-    border: 2px solid green;
-    padding: 10px 15px;
-    margin-top: 15px;
-}
-
 .post_form {
     display: flex;
     flex-direction: column;
