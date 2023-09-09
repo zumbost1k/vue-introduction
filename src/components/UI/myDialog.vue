@@ -8,19 +8,10 @@
     </div>
 </template>
 <script>
+import toogleMixins from '../mixins/toogleMixins'
 export default {
     name: 'my-dialog',
-    props: {
-        show: {
-            type: Boolean,
-            default: false,
-        }
-    },
-    methods: {
-        hideDialog() {
-            this.$emit('update:show', false)
-        }
-    }
+    mixins:[toogleMixins]
 }
 </script>
 <style >
