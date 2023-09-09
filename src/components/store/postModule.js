@@ -6,7 +6,7 @@ export const postModule = {
         isPostsLoading: false,
         selectedSort: '',
         searchQuery: '',
-        page: 1,
+        currentPage: 1,
         limit: 10,
         totalPages: 0,
         sortOptions: [
@@ -48,7 +48,7 @@ export const postModule = {
                 commit('setLoading', true);
                 const response = await axios.get('https://jsonplaceholder.typicode.com/posts', {
                     params: {
-                        _page: state.page,
+                        _page: state.currentPage,
                         _limit: state.limit
                     }
                 });
